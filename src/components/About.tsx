@@ -44,7 +44,7 @@ export function About() {
   };
 
   return (
-    <motion.div id="home" className="container mx-auto px-4 mt-40 flex justify-between" ref={ref} animate={controls} initial='hidden'>
+    <motion.div id="about" className="container mx-auto px-4 mt-40 flex justify-between" ref={ref} animate={controls} initial='hidden'>
       <div className="head-text">
         <motion.h1 variants={fadeInLeft} className='mb-2 font text-yellow-700' style={{ fontSize: '40px' }}>
           About Me
