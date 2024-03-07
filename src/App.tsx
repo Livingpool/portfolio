@@ -1,22 +1,23 @@
-import { Home, About, Projects, Contact, Navbar } from './components';
+import { Home, About, Projects, Contact, Navbar, Footer } from './components';
 import { Element } from 'react-scroll';
 
 export default function App() {
   return (
     <main>
       <Navbar />
-      <Element name="home">
+      <Element name="home" className='pt-10'>
         <Home />
       </Element>
-      <Element name="about">
+      <Element name="about" className='pt-0.5'>
         <About />
       </Element>
-      <Element name="projects">
+      <Element name="projects" className='pt-0.5'>
         <Projects />
       </Element>
-      <Element name="contact">
+      <Element name="contact" className='pt-0.5'>
         <Contact />
       </Element>
+      <Footer />
     </main>
   );
 }
