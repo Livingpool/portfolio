@@ -12,7 +12,6 @@
   overflow: hidden;
 }
 
-
 /* Background animation keyframes */
 @keyframes float1 {
   0% {
@@ -60,4 +59,28 @@
 
 .shape-float3 {
   animation: float3 6s infinite;
+}
+
+@media (max-width: 1280px) {
+  .background svg {
+    height: 80%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .background {
+    height: 130%;
+  }
+}
+
+@media (max-width: 768px) {
+  .background {
+    height: 190%;
+  }
+}
+
+@media (max-width: 480px) {
+  .background {
+    height: 130%;
+  }
 }

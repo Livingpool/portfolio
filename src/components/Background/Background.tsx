@@ -14,7 +14,7 @@ const Background = () => {
 
   return (
     <div className='background'>
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="100%" viewBox="0 0 1440 560">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1440 560">
         <g mask="url(&quot;#SvgjsMask1028&quot;)" fill='#ffcccc'>
           <path style={{filter: `hue-rotate(${hueRotation}deg)`}} d="M1335.435163148824 397.29863630117273L1440.4295865082147 437.717067565452 1426.742264633064 340.3267119144783z" className="shape-float2"></path>
           <path style={{filter: `hue-rotate(${hueRotation + 30}deg)`}} d="M160.90424728809924 241.6147357996808L187.34449960186566 333.82285361750763 279.5526174196925 307.38260130374124 253.11236510592607 215.17448348591438z" className="shape-float2"></path>
