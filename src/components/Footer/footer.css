@@ -1,0 +1,23 @@
+.footer {
+  @apply flex flex-col sm:flex-row justify-between items-center w-full right-0 left-0 h-full max-h-32 sm:max-h-20 mt-10 mx-auto gap-2;
+  padding: 2rem;
+  background-color: rgb(255, 241, 217);
+}
+
+.text-container {
+  @apply flex items-center justify-center sm:justify-start w-full mx-auto;
+}
+
+.text-container p {
+  @apply text-sm xs:text-base lg:text-lg;
+}
+
+
+.social-media-container {
+  @apply mb-8 mr-0 w-8/12 sm:w-3/12;
+}
+
+.social-media-container a {
+  @apply w-6 h-6;
+}
+

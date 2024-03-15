@@ -1,10 +1,11 @@
-import { Home, About, Projects, Contact, Navbar, Footer } from './components';
+import { Home, About, Projects, Contact, Navbar, Footer, Background } from './components';
 import { Element } from 'react-scroll';
 
 export default function App() {
   return (
     <main>
       <Navbar />
+      <Background />
       <Element name="home" className='pt-10'>
         <Home />
       </Element>

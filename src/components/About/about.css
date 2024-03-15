@@ -1,0 +1,31 @@
+.about {
+  @apply container flex flex-col sm:flex-row mx-auto my-10 px-2 xs:px-0 sm:px-8 lg:px-8 justify-center sm:justify-between w-full;
+}
+
+.about h1 {
+  @apply text-yellow-700 mb-2 text-center sm:text-left text-4xl lg:text-5xl;
+}
+
+.about h2 {
+  @apply text-yellow-800 text-base xs:text-lg lg:text-xl text-center sm:text-left;
+}
+
+.about p {
+  @apply my-4 sm:my-6 text-black text-sm xs:text-base lg:text-xl font-semibold text-center sm:text-left sm:pr-4; 
+}
+
+.hard-skills {
+  @apply mt-0 lg:mt-4 flex flex-row flex-wrap items-center;
+}
+
+.icon-group {
+  @apply flex flex-wrap gap-4 justify-center sm:justify-start px-8 sm:px-0 pt-2;
+}
+
+.me-container {
+  @apply flex mx-auto justify-end mt-8 xs:mt-10 w-8/12 xs:w-full sm:w-full;
+}
+
+.me-container img {
+  @apply object-contain w-full h-full xl:w-10/12;
+}

@@ -1,0 +1,53 @@
+.volcano {
+  @apply absolute top-24 lg:top-36 right-10 lg:right-16 hidden sm:block w-1/5;
+}
+
+.ellipse-8, .ellipse-9, .ellipse-10 {
+  opacity: 0;
+}
+
+/* Bubble animations */
+@keyframes moveAndFade-8 {
+  0% {
+    transform: translate(21px, 50px); /* start from a bottom-left position */
+    opacity: 1;
+  }
+  100% {
+    opacity: 0; 
+  }
+}
+
+.ellipse-8 {
+  animation: moveAndFade-8 3s ease-in infinite;
+  animation-delay: 3.5s; /* start after all animations finished */
+}
+
+@keyframes moveAndFade-9 {
+  0% {
+    transform: translate(42px, 50px); 
+    opacity: 1;
+  }
+  100% {
+    opacity: 0; 
+  }
+}
+
+.ellipse-9 {
+  animation: moveAndFade-9 2s ease-in infinite;
+  animation-delay: 5s; 
+}
+
+@keyframes moveAndFade-10 {
+  0% {
+    transform: translate(50px, 80px); 
+    opacity: 1;
+  }
+  100% {
+    opacity: 0; 
+  }
+}
+
+.ellipse-10 {
+  animation: moveAndFade-10 2s ease-in infinite;
+  animation-delay: 3s; 
+}

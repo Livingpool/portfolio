@@ -1,0 +1,63 @@
+/* reference [draggable blob]: https://codepen.io/maaarj/pen/mmJNPO */
+/* reference [svg backgrounds]: https://bgjar.com */
+
+.background {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right:0;
+  bottom: 0;
+  height: 100%;
+  z-index: -1000;
+  overflow: hidden;
+}
+
+
+/* Background animation keyframes */
+@keyframes float1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-10px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.shape-float1 {
+  animation: float1 5s infinite;
+}
+
+@keyframes float2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-5px, -5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.shape-float2 {
+  animation: float2 4s infinite;
+}
+
+@keyframes float3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.shape-float3 {
+  animation: float3 6s infinite;
+}

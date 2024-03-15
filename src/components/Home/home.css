@@ -1,62 +1,28 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 .home {
-  @apply container mx-auto mt-40 mb-20 flex justify-between w-full;
+  @apply container relative flex flex-col text-center sm:text-left mx-auto mt-28 mb-10 sm:mb-20 justify-center sm:justify-between w-full px-2 sm:px-8;
 }
 
 .home h1 {
-  @apply text-black leading-tight;
-  font-size: 90px;
+  @apply text-black text-6xl xs:text-7xl lg:text-8xl xl:text-9xl py-4;
 }
 
 .home h2 {
-  @apply text-gray-500 leading-tight;
-  font-size: 50px;
-  overflow-wrap: break-word;
+  @apply text-gray-500 text-xl sm:text-2xl lg:text-3xl xl:text-5xl mb-4;
 }
 
 .home h3 {
-  @apply text-gray-500;
-  font-size: 20px;
+  @apply text-gray-500 text-xl sm:text-sm lg:text-xl;
 }
 
 .home p {
-  @apply sm:my-2 text-yellow-800;
-  font-size: 24px;
+  @apply text-yellow-800 text-lg lg:text-xl xl:text-3xl py-1;
 }
 
 .home-btn {
-  @apply ring-2 ring-yellow-700 bg-transparent text-yellow-700 rounded-lg px-20 py-4 hover:bg-yellow-500 hover:text-white hover:cursor-pointer transition-colors duration-200;
+  @apply flex justify-center items-center ring-2 ring-yellow-700 bg-transparent text-yellow-700 rounded-lg w-full h-full hover:bg-yellow-500 hover:text-white hover:cursor-pointer transition-colors duration-200;
   font-size: 20px;
 }
 
-/* Small devices */
-@media (max-width: 768px) {
-  .home {
-    @apply flex-col mt-36;
-  }
-
-  .home h1 {
-    @apply mb-4;
-    font-size: 76px;
-  }
-
-  .home h2 {
-    @apply leading-10 mt-4 mb-8;
-    font-size: 36px;
-  }
-
-  .home h3 {
-    @apply mb-4;
-  }
-
-  .home p {
-    @apply mt-4 mb-4; /* margin-top: 10px; */
-  }
-
-  .home-btn-container {
-    @apply mt-10 mb-8;
-  }
+.home-btn-container {
+  @apply flex mx-auto sm:mx-0 w-9/12 sm:w-48 lg:w-56 h-12 my-4 sm:mb-0 lg:my-4;
 }

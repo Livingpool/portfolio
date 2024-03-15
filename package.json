@@ -21,6 +21,7 @@
     "react-scroll": "^1.9.0",
     "react-toastify": "^10.0.4",
     "react-visibility-sensor": "^5.1.1",
+    "tailwindcss-animation-delay": "^1.2.0",
     "typeface-poppins": "^1.1.13",
     "validator": "^13.11.0"
   },

@@ -24,7 +24,8 @@ const Navbar = () => {
   return (
     <div id='navbar' className={ isMenuOpen ? 'navbar active' : 'navbar' }>
       <Link to='home' className={ isMenuOpen ? 'icon closed' : 'icon' } onClick={() => handleClick('home')} spy={true} smooth={true} offset={-70} duration={500}>
-        <img src={TimLiu} alt="Tim Liu" className="w-12 icon-hover"/>
+        <img src={TimLiu} alt="Tim Liu" className="w-8 xs:w-10 icon-hover mr-4"/>
+        <h1 className='emilys-candy-regular'>Tim Liu | Portfolio</h1>
       </Link>
 
       <div className="navlist">

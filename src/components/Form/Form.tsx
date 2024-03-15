@@ -1,60 +1,59 @@
-import { useForm, ValidationError } from '@formspree/react'
-import { toast, ToastContainer } from 'react-toastify'
-import ReCAPTCHA from 'react-google-recaptcha'
-import { useEffect, useState } from 'react'
-import validator from 'validator'
+import { useForm, ValidationError } from "@formspree/react";
+import { toast, ToastContainer, Bounce } from "react-toastify";
+import ReCAPTCHA from "react-google-recaptcha";
+import { useState } from "react";
+import validator from "validator";
+import 'react-toastify/dist/ReactToastify.css';
+import "./form.css";
+
+// react-toastify reference: https://deadsimplechat.com/blog/react-toastify-the-complete-guide/#custom-styling-the-notification-with-html-and-css
 
 export function Form() {
-  const [state, handleSubmit] = useForm(import.meta.env.VITE_APP_FORMSPREE_ID as string)
+  const [state, handleSubmit] = useForm(
+    import.meta.env.VITE_APP_FORMSPREE_ID as string
+  );
 
-  const [validEmail, setValidEmail] = useState(false)
-  const [isHuman, setIsHuman] = useState(false)
-  const [name, setName] = useState('')
-  const [message, setMessage] = useState('')
+  const [validEmail, setValidEmail] = useState(false);
+  const [isHuman, setIsHuman] = useState(false);
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
 
   // verify if the email is valid
   function verifyEmail(email: string) {
     if (validator.isEmail(email)) {
-      setValidEmail(true)
+      setValidEmail(true);
     } else {
-      setValidEmail(false)
+      setValidEmail(false);
     }
   }
 
-  useEffect(() => {
+  // formspree returns errors even if the email is sent successfully. idk why?
+  const handleSubmitWithNotification = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    await handleSubmit(event);
     if (state.succeeded) {
-      toast.success('Email successfully sent!', {
-        position: 'bottom-left',
+
+      toast.success("Email successfully sent! 💥", {
+        position: "top-center",
         pauseOnFocusLoss: false,
         closeOnClick: true,
         hideProgressBar: false,
-        toastId: 'succeeded',
-      })
-    }
-  })
+        autoClose: 3000,
+        toastId: "succeeded",
+        transition: Bounce,
+      });
 
-  // if the form is successfully submitted, show a success message
-  if (state.succeeded) {
-    return (
-      <div>
-        <h3>Thank you for your message! 😃</h3>
-        <button
-        onClick={() => {
-            window.scrollTo({ top: 0, behavior: 'smooth' })
-        }}
-        >
-        Back to the top
-        </button>
-        <ToastContainer />
-      </div>
-    )
-  }
+      setTimeout(() => {
+        window.location.reload();
+      }, 4000);
+    }
+  };
 
   return (
-    <div id='form' className='flex flex-col'>
-      <h1 className='mt-4 mb-2 font' style={{ fontSize: '20px' }}>Get in touch by the form ✨✨</h1>
-      <form onSubmit={handleSubmit} className='flex flex-col justify-center w-full md:w-1/3 lg:w-1/2'>
-        <label className='text-black font-semibold mb-4 relative'>
+    <div id="form" className="form">
+      <h3>Get in touch by the form ✨✨</h3>
+      <form onSubmit={handleSubmitWithNotification}>
+        <label>
           Name
           <input
             required
@@ -63,14 +62,14 @@ export function Form() {
             type="name"
             name="name"
             onChange={(e) => {
-              setName(e.target.value)
+              setName(e.target.value);
             }}
-            className='input'
+            className="input"
           />
-          {name && <span className="absolute right-0 top-0 mt-1 mr-2 text-green-500">✓</span>}
+          {name && <span className="checkmark">✓</span>}
         </label>
 
-        <label className='text-black font-semibold mb-4 relative'>
+        <label>
           Email
           <input
             required
@@ -79,16 +78,16 @@ export function Form() {
             type="email"
             name="email"
             onChange={(e) => {
-              verifyEmail(e.target.value)
+              verifyEmail(e.target.value);
             }}
-            className='input'
+            className="input"
           />
-          {validEmail && <span className="absolute right-0 top-0 mt-1 mr-2 text-green-500">✓</span>}
+          {validEmail && <span className="checkmark">✓</span>}
         </label>
 
         <ValidationError prefix="Email" field="email" errors={state.errors} />
 
-        <label className='text-black font-semibold mb-4 relative'>
+        <label>
           Your Message
           <textarea
             required
@@ -96,31 +95,43 @@ export function Form() {
             id="message"
             name="message"
             onChange={(e) => {
-              setMessage(e.target.value)
+              setMessage(e.target.value);
             }}
-            className='textarea'
-            rows='5'
+            className="textarea"
+            rows="5"
           />
         </label>
 
-        <ValidationError prefix="Message" field="message" errors={state.errors}/>
-        <ReCAPTCHA
-          sitekey={import.meta.env.VITE_APP_RECAPTCHA_SITE_KEY as string}
-          onChange={(e) => {
-            setIsHuman(true)
-          }}
-        ></ReCAPTCHA>
+        <ValidationError
+          prefix="Message"
+          field="message"
+          errors={state.errors}
+        />
 
-        <button 
-          type="submit" 
-          className={`submit-btn ${state.submitting || !name || !validEmail || !message || !isHuman ? 'cursor-not-allowed' : 'cursor-pointer'}`} 
-          disabled={state.submitting || !name || !validEmail || !message || !isHuman}
-        >          
+        <div className="recaptcha">
+          <ReCAPTCHA
+            sitekey={import.meta.env.VITE_APP_RECAPTCHA_SITE_KEY as string}
+            onChange={(_e) => {
+              setIsHuman(true);
+            }}
+          ></ReCAPTCHA>
+        </div>
+
+        <button
+          type="submit"
+          className={`submit-btn ${
+            state.submitting || !name || !validEmail || !message || !isHuman
+              ? "cursor-not-allowed"
+              : "cursor-pointer"
+          }`}
+          disabled={
+            state.submitting || !name || !validEmail || !message || !isHuman
+          }
+        >
           Send Message
         </button>
-
       </form>
       <ToastContainer />
     </div>
-  )
+  );
 }

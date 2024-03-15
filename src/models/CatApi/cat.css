@@ -1,0 +1,15 @@
+.cat-container {
+  @apply relative mx-auto sm:absolute top-8 sm:top-12 lg:top-12 xl:top-20 sm:right-16 xl:right-32 sm:text-left max-w-full;
+}
+
+.cat-container h5 {
+  @apply text-gray-600 text-sm lg:text-lg pb-2 text-center;
+}
+
+.cat-container img {
+  @apply w-72 lg:w-96 max-h-48 lg:max-h-60 object-cover outline-double outline-black;
+}
+
+.cat-container h6 {
+  @apply text-xs pt-2 text-gray-600 text-center;
+}
