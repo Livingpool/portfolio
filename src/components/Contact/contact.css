@@ -1,5 +1,5 @@
 .contact {
-  @apply container flex flex-col justify-between mx-auto text-center lg:text-left px-2 xs:px-0 sm:px-8 lg:px-8 mt-4 lg:mt-20;
+  @apply container flex flex-col justify-between mx-auto text-center px-2 xs:px-0 sm:px-8 lg:px-8 mt-4 lg:mt-10;
 }
 
 .contact h1 {
@@ -12,7 +12,7 @@
 
 /* Contact button */
 .contact-btn-container {
-  @apply flex flex-wrap items-center mt-2 gap-4 justify-center lg:justify-between w-full lg:w-1/2 mx-auto lg:mx-0;
+  @apply flex flex-wrap items-center mt-2 gap-4 justify-center w-full lg:w-1/2 mx-auto;
 }
 
 .contact-btn-container img {

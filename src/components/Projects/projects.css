@@ -1,5 +1,5 @@
 .projects {
-  @apply container sm:flex-row mx-auto my-20 sm:px-8 justify-between w-full;
+  @apply container sm:flex-row mx-auto my-10 sm:px-8 justify-between w-full;
 }
 
 .projects h1 {
