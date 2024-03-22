@@ -1,5 +1,5 @@
 .about {
-  @apply container flex flex-col sm:flex-row mx-auto my-10 px-2 xs:px-0 sm:px-8 lg:px-8 justify-center sm:justify-between w-full;
+  @apply container flex flex-col sm:flex-row mx-auto my-10 px-2 xs:px-0 sm:px-8 lg:px-8 justify-center sm:justify-between w-full overflow-hidden;
 }
 
 .about h1 {
@@ -23,9 +23,9 @@
 }
 
 .me-container {
-  @apply flex mx-auto justify-end mt-8 xs:mt-10 w-8/12 xs:w-full sm:w-full;
+  @apply flex mx-auto justify-center sm:justify-end mt-8 xs:mt-10 w-full;
 }
 
 .me-container img {
-  @apply object-contain w-full h-full xl:w-10/12;
+  @apply object-contain w-11/12 xl:w-10/12;
 }

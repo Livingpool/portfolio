@@ -1,5 +1,5 @@
 .contact {
-  @apply container flex flex-col justify-between mx-auto text-center px-2 xs:px-0 sm:px-8 lg:px-8 mt-4 lg:mt-10;
+  @apply container flex flex-col justify-between mx-auto text-center px-2 xs:px-0 sm:px-8 lg:px-8 mt-20 lg:mt-10;
 }
 
 .contact h1 {

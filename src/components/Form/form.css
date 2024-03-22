@@ -3,7 +3,7 @@
 }
 
 .form h3 {
-  @apply mt-4 mb-2 sm:mb-4 text-yellow-800 text-xl sm:text-2xl;
+  @apply mt-4 mb-2 sm:mb-4 text-yellow-800 font-medium text-xl sm:text-2xl;
 }
 
 .form form {
