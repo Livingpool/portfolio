@@ -1,5 +1,5 @@
 .home {
-  @apply container relative flex flex-col text-center sm:text-left mx-auto mt-28 mb-10 sm:mb-20 justify-center sm:justify-between w-full px-2 sm:px-8;
+  @apply container relative flex flex-col text-center sm:text-left mx-auto mt-28 mb-20 justify-center sm:justify-between w-full px-2 sm:px-8;
 }
 
 .home h1 {
