@@ -1,4 +1,4 @@
-# Portfolio of Tim Liu
+# Portfolio of Tim Liu🥳
 This project was created with Create React App.\
 It is my portfolio website to display my skills and contact links.
 
